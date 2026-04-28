@@ -5,13 +5,16 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "setup": "node setup.js",
     "build": "tsc",
     "dev": "ts-node src/index.ts",
     "test": "jest",
     "lint": "eslint src --ext .ts",
     "format": "prettier --write src/**/*.ts",
-    "clean": "rm -rf dist",
-    "prebuild": "npm run clean"
+    "clean": "rmdir /s /q dist node_modules",
+    "quick-start": "npx ts-node examples/quick-start.ts",
+    "self-improve": "npx ts-node examples/self-improvement-example.ts",
+    "prebuild": "npm run clean || true"
   },
   "keywords": [
     "ai",
